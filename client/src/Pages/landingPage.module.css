@@ -4,33 +4,32 @@
   width: 100%;
 }
 
-.landingPage {
+.innerContainer {
   flex: 1;
-  background-color: black;
   margin: 0 10px;
   color: white;
 }
 
 @media (min-width: 576px) {
-  .landingPage {
+  .innerContainer {
     margin: 0 20px;
   }
 }
 
 @media (min-width: 768px) {
-  .landingPage {
+  .innerContainer {
     max-width: 650px;
   }
 }
 
 @media (min-width: 992px) {
-  .landingPage {
+  .innerContainer {
     max-width: 850px;
   }
 }
 
 @media (min-width: 1200px) {
-  .landingPage {
+  .innerContainer {
     max-width: 1000px;
   }
 }

@@ -1,36 +1,12 @@
-.container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.landingPage {
+.headerContainer {
   flex: 1;
-  background-color: black;
   margin: 0 10px;
-  color: white;
+  color: black;
+  display: flex;
+  justify-items: flex-start;
 }
 
-@media (min-width: 576px) {
-  .landingPage {
-    margin: 0 20px;
-  }
-}
-
-@media (min-width: 768px) {
-  .landingPage {
-    max-width: 650px;
-  }
-}
-
-@media (min-width: 992px) {
-  .landingPage {
-    max-width: 850px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .landingPage {
-    max-width: 1000px;
-  }
+.headerLogo {
+  display: block;
+  margin: 5px 10px;
 }

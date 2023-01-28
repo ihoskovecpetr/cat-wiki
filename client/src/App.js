@@ -4,7 +4,7 @@ import "./App.css";
 import LandingPage from "./Pages/LandingPage";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState({});
 
   React.useEffect(() => {
     const origin =
@@ -15,7 +15,10 @@ function App() {
     console.log({ prod: process.env.NODE_ENV, origin });
     fetch(origin + "api/init_data")
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        console.log("Seting_data", { data });
+        setData({ ...data });
+      });
   }, []);
 
   console.log({ data });
