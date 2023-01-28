@@ -10,11 +10,7 @@ function Header() {
       .then((data) => setData(data.message));
   }, []);
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.landingPage}>landingPage XX</div>
-    </div>
-  );
+  return <div className={styles.landingPage}>CatWiki</div>;
 }
 
 export default Header;
