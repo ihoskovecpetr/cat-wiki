@@ -29,7 +29,7 @@ function BreedDetail() {
           )}
         </div>
         <div className={styles.featuresColumn}>
-          {breedData?.breed ? (
+          {breedData?.breed?.breeds[0] ? (
             <div>
               <h1 className={styles.mainHeading}>
                 {breedData?.breed.breeds[0].name}
