@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.innerContainer {
+  flex: 1;
+  margin: 0 10px;
+  color: white;
+}
+
+@media (min-width: 576px) {
+  .innerContainer {
+    margin: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .innerContainer {
+    max-width: 650px;
+  }
+}
+
+@media (min-width: 992px) {
+  .innerContainer {
+    max-width: 850px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .innerContainer {
+    max-width: 1000px;
+  }
+}

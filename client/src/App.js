@@ -1,31 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import LandingPage from "./Pages/LandingPage";
+import BreedDetail from "./Pages/BreedDetail";
+import BasicLayout from "./Layouts/BasicLayout";
 
 function App() {
-  const [data, setData] = React.useState({});
-
-  React.useEffect(() => {
-    const origin =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3003/"
-        : "https://test-app-123d.herokuapp.com/";
-
-    console.log({ prod: process.env.NODE_ENV, origin });
-    fetch(origin + "api/init_data")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Seting_data", { data });
-        setData({ ...data });
-      });
-  }, []);
-
-  console.log({ data });
-
   return (
     <div className="App">
-      <LandingPage data={data} />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <BasicLayout>
+              <LandingPage />
+            </BasicLayout>
+          </Route>
+          <Route path="/:breed_id">
+            <BasicLayout>
+              <BreedDetail />
+            </BasicLayout>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

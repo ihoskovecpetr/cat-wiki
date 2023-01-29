@@ -18,19 +18,6 @@ router.get("/init_data", async function (req, response, next) {
       breeds_promise,
       images_promise,
     ]);
-    //   .then((res) => {
-    //     console.log({ data: res.data });
-    //     response.json([
-    //       ...res.data.map((cat) => ({ id: cat.id, name: cat.name })),
-    //     ]);
-    //   })
-    //   .catch((err) => {
-    //     console.log("Error: ", err.message);
-    //   });
-
-    console.log({
-      breeds_data: breeds_data.data,
-    });
 
     const filteredBreeds = breeds_data.data.map((cat) => ({
       id: cat.id,
@@ -38,6 +25,23 @@ router.get("/init_data", async function (req, response, next) {
     }));
 
     response.json({ images: images_data.data, breeds: filteredBreeds });
+  } catch (error) {
+    console.log("Error: ", error.message);
+  }
+});
+
+router.get("/breed_data", async function (req, response, next) {
+  try {
+    console.log("BREED_DATAA");
+    console.log({ breedID: req.query.breed_id });
+
+    const breed_data = await axiosInstance().get(
+      `https://api.thecatapi.com/v1/images/search?breed_id=${req.query.breed_id}`
+    );
+
+    console.log({ breed_data: breed_data });
+
+    response.json({ breed: breed_data.data[0] });
   } catch (error) {
     console.log("Error: ", error.message);
   }

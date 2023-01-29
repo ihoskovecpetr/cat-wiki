@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+}
+
+.containerContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 10px;
+}
+
+.imageColumn {
+  flex: 2;
+}
+
+.featuresColumn {
+  flex: 4;
+}
+
+.mainImage {
+  height: 200px;
+  /* width: 200px; */
+  margin: 0 10px;
+}
+
+.mainHeading {
+  text-align: left;
+}
+
+.featureRow {
+  display: flex;
+  width: 100%;
+  /* padding: 5px 20px; */
+}
+
+.featureName {
+  flex: 1;
+  text-align: left;
+}
+
+.featureValue {
+  flex: 4;
+  display: flex;
+  align-items: center;
+}
