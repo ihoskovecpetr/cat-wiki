@@ -9,8 +9,6 @@ function Section1({ breeds }) {
   const [options, setOptions] = React.useState([]);
   const history = useHistory();
 
-  console.log({ breedsArr: breeds, options });
-
   useEffect(() => {
     if (!breeds) {
       return;
@@ -24,7 +22,6 @@ function Section1({ breeds }) {
   };
 
   const onSelectChange = (e) => {
-    console.log("onChange", { e });
     history.push(`/${e.value}`);
   };
 

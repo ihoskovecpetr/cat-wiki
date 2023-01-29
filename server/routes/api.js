@@ -5,7 +5,6 @@ const axiosInstance = require("../lib/axiosInstance");
 
 router.get("/init_data", async function (req, response, next) {
   try {
-    console.log("GOT_TO_INIT_DATA");
     const breeds_promise = axiosInstance().get(
       "https://api.thecatapi.com/v1/breeds"
     );
@@ -32,14 +31,9 @@ router.get("/init_data", async function (req, response, next) {
 
 router.get("/breed_data", async function (req, response, next) {
   try {
-    console.log("BREED_DATAA");
-    console.log({ breedID: req.query.breed_id });
-
     const breed_data = await axiosInstance().get(
       `https://api.thecatapi.com/v1/images/search?breed_id=${req.query.breed_id}`
     );
-
-    console.log({ breed_data: breed_data });
 
     response.json({ breed: breed_data.data[0] });
   } catch (error) {

@@ -10,14 +10,10 @@ function BreedDetail() {
   const { breed_id } = useParams();
   const [breedData, setBreedData] = useState();
 
-  console.log({ Breed_ID: breed_id });
-
   useEffect(() => {
-    console.log({ prod: process.env.NODE_ENV, origin });
     fetch(origin + `api/breed_data?breed_id=${breed_id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Seting_data_breed", { data });
         setBreedData({ ...data });
       });
   }, []);
@@ -35,16 +31,6 @@ function BreedDetail() {
         <div className={styles.featuresColumn}>
           {breedData?.breed ? (
             <div>
-              {/* {Object.keys(breedData?.breed.breeds[0]).map((key) => {
-                console.log({ val: breedData?.breed.breeds[0][key] });
-                return typeof breedData?.breed.breeds[0][key] != "object" ? (
-                  <p>
-                    {key}: {breedData?.breed.breeds[0][key]}
-                  </p>
-                ) : (
-                  "OBJECT"
-                );
-              })} */}
               <h1 className={styles.mainHeading}>
                 {breedData?.breed.breeds[0].name}
               </h1>
